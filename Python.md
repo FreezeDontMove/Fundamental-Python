@@ -225,7 +225,7 @@
   * pd.read_csv('含有路径的文件名')
     * 用某一列当作index:pd.read_csv('含有路径的文件名', index_col = 0)
 * 索引
-  * 以nba为例
+  * 以nba.csv为例 [nba.csv](https://static.runoob.com/download/nba.csv)
   
   ```python
   import pandas as pd
@@ -234,4 +234,4 @@
   name_2 = test['Name'] # 以Series的形式返回
   ```
 
-  * [DataFrame和Series的区别]([链接地址](https://blog.csdn.net/u012474716/article/details/78550391))
+  * [DataFrame和Series的区别](https://blog.csdn.net/u012474716/article/details/78550391)
