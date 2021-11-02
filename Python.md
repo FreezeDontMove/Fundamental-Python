@@ -92,3 +92,41 @@
         # (1 + 2 + 3 + 4 + 7 + 10)/ 6 = 4.5
         4.5
         ```
+
+    * 求方差（np.std()）
+  
+        ```python
+        print(np.std([1,2,3,4]))
+        ```
+
+    * 求相关系数矩阵（np.corrcoef(矩阵1, 矩阵2)）
+  
+        ```python
+        Array1 = [[1, 2, 3], [4, 5, 6]]
+        Array2 = [[11, 25, 346], [734, 48, 49]]
+        Mat1 = np.array(Array1)
+        Mat2 = np.array(Array2)
+        correlation = np.corrcoef(Mat1, Mat2)
+        print("矩阵1=\n", Mat1)
+        print("矩阵2=\n", Mat2)
+        print("相关系数矩阵=\n", correlation)
+        #函数的返回值还是一个矩阵，
+        #结果矩阵的行数*结果矩阵的列数==矩阵1的行数*矩阵2的行数
+        ```
+
+    * 两个长度相同的一维矩阵可以联合
+  
+        ```python
+        height = [191, 184, 185, 183, 179, 179]
+        position = ['GK', 'M', 'A', 'D', 'D', 'M']
+
+        np_height = np.array(height)
+        np_position = np.array(position)
+
+        print((np_height[np_position == 'M']))
+        ```
+
+---
+
+## Matplotlib
+
