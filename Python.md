@@ -130,3 +130,33 @@
 
 ## Matplotlib
 
+* 导包
+
+  ```python
+  import matplotlib.pyplot as plt
+  ```
+
+* 线图（plt.plot(列表1/一维数组, 列表2)）
+  * 两个列表的元素个数必须一致
+* 散点图
+  * plt.scatter(x, y, s=None, c=None, marker=None, alpha = None)
+    * x，y：长度相同的数组，也就是我们即将绘制散点图的数据点，输入数据。
+    * s：点的大小，默认 20，也可以是个数组，数组每个参数为对应点的大小。
+    * c：点的颜色，默认蓝色 'b'，也可以是个 RGB 或 RGBA 二维行数组。
+    * marker：点的样式，默认小圆圈 'o'。
+    * alpha：透明度设置，0-1 之间，默认 None，即不透明。
+
+* 直方图（plt.hist(列表/数组)）
+
+  * ```python
+    a = np.array([22,87,5,43,56,73,55,54,11,20,51,5,79,31,27]) 
+    plt.hist(a, bins =  [0,20,40,60,80,100]) # 按照[0,20,40,60,80,100]来划分
+    plt.hist(a, bins = 10) # 平均分为10个  
+    ```
+
+* 展示图片（plt.show()）
+* 将y轴和x轴的比例设置为对数比例：plt.xscale('log')
+* 添加横坐标纵坐标和标题描述：plt.xlabel(字符串)/ 
+  pltylabel.(字符串)/ plt.title(字符串)
+* 更改横纵坐标的数值：plt.xticks(列表1, 列表2)/plt.yticks(列表1, 列表2)
+  * 列表1为原先直方图的数值，列表2的值将会替换列表1
