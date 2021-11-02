@@ -49,19 +49,46 @@
 
   * 二维数组
     * 原列表
+  
         ```python
         baseball = [[180, 78.4],
             [215, 102.7],
             [210, 98.5],
             [188, 75.2]]
         ```
+
     * 查看shape（结果为(4, 2)）
+  
         ```python
         print(np_baseball.shape)
         ```
+
     * 通过精确到行列来具体操作二维数组
+  
         ```python
         np_baseball[1, 2]
-        np_baseball[:, 1]
-        np_baseball[1, :]
+        np_baseball[:, 1] #形成一个新的一维数组
+        np_baseball[1, :] #形成一个新的一维数组
+        ```
+
+    * 求中位数（np.median()）
+
+        ```python
+        array([[10,  7,  4],
+              [ 3,  2,  1]])
+        np.median(a)
+        # 1，2，3，4，7，10 
+        # (3+4)/2 = 3.5
+        3.5
+        ```
+
+    * 求平均数（np.mean()）
+
+        ```python
+        array([[10,  7,  4],
+              [ 3,  2,  1]])
+        np.mean(a)
+        # 1，2，3，4，7，10 
+        # (1 + 2 + 3 + 4 + 7 + 10)/ 6 = 4.5
+        4.5
         ```
