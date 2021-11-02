@@ -219,7 +219,7 @@
   df = pd.DataFrame(data)
   ```
 
-* 给index命名：表名.index = []
+* 给index命名：表名.index = [列表]
   * 列表中的元素数量=表格行数
 * 读取.csv文件
   * pd.read_csv('含有路径的文件名')
