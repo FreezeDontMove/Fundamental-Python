@@ -218,3 +218,20 @@
   data = [{'a': 1, 'b': 2},{'a': 5, 'b': 10, 'c': 20}]
   df = pd.DataFrame(data)
   ```
+
+* 给index命名：表名.index = []
+  * 列表中的元素数量=表格行数
+* 读取.csv文件
+  * pd.read_csv('含有路径的文件名')
+    * 用某一列当作index:pd.read_csv('含有路径的文件名', index_col = 0)
+* 索引
+  * 以nba为例
+  * 
+  ```python
+  import pandas as pd
+  test = pd.read_csv('E:/Python/Intermediate Python/nba.csv')
+  name_1 = test[['Name']] # 以DataFrame的形式返回
+  name_2 = test['Name'] # 以Series的形式返回
+  ```
+
+  * [DataFrame和Series的区别]([链接地址](https://blog.csdn.net/u012474716/article/details/78550391))
