@@ -6,6 +6,11 @@
 * True False 首字母大写
 * print后只能跟字符串，其他类型须转换成字符串
 * 字符串切片list[a:b]中，b > a
+  
+---
+
+## 字符串
+
 * sorted()
   * 排序
   * sorted(iterable, key-None, reverse-False)
@@ -18,6 +23,14 @@
 * index()
   * 找到索引
   * str.index(str, beg=0, end=len(string))
+
+---
+
+## 字典
+
+* 字典.keys()和字典.values()返回的是视图
+* 字典新增内容：字典[键] = 值
+* 删除字典内容：del(字典[键])
 
 ---
 
@@ -136,7 +149,8 @@
   import matplotlib.pyplot as plt
   ```
 
-* 线图（plt.plot(列表1/一维数组, 列表2)）
+* 线图
+  * plt.plot(列表1/一维数组, 列表2)
   * 两个列表的元素个数必须一致
 * 散点图
   * plt.scatter(x, y, s=None, c=None, marker=None, alpha = None)
@@ -146,7 +160,8 @@
     * marker：点的样式，默认小圆圈 'o'。
     * alpha：透明度设置，0-1 之间，默认 None，即不透明。
 
-* 直方图（plt.hist(列表/数组)）
+* 直方图
+  * plt.hist(列表/数组)
 
   * ```python
     a = np.array([22,87,5,43,56,73,55,54,11,20,51,5,79,31,27]) 
@@ -154,9 +169,52 @@
     plt.hist(a, bins = 10) # 平均分为10个  
     ```
 
+* 绘制网格线
+  * plt.grid(True)
+* 在图中标记
+  * plt.text(横坐标，纵坐标，值)
+
 * 展示图片（plt.show()）
 * 将y轴和x轴的比例设置为对数比例：plt.xscale('log')
 * 添加横坐标纵坐标和标题描述：plt.xlabel(字符串)/ 
   pltylabel.(字符串)/ plt.title(字符串)
 * 更改横纵坐标的数值：plt.xticks(列表1, 列表2)/plt.yticks(列表1, 列表2)
   * 列表1为原先直方图的数值，列表2的值将会替换列表1
+
+---
+
+## Pandas
+
+* 导包: import pandas as pd
+* 生成DataFrame
+  * 方法：pandas.DataFrame( data, index, columns, dtype, copy)
+  * 含义：
+    * data：一组数据(ndarray、series, map, lists, dict 等类型)。
+    * index：索引值，或者可以称为行标签。
+    * columns：列标签，默认为 RangeIndex (0, 1, 2, …, n) 。
+    * dtype：数据类型。
+    * copy：拷贝数据，默认为 False。
+
+  * 用列表生成
+  
+  ```python
+  import pandas as pd
+  data = [['Google',10],['Runoob',12],['Wiki',13]]
+  df = pd.DataFrame(data,columns=['Site','Age'],dtype=float)
+  ```
+
+  * 用数组生成
+
+  ```python
+  import pandas as pd
+  data = {'Site':['Google', 'Runoob', 'Wiki'], 'Age':[10, 12, 13]}
+  df = pd.DataFrame(data)
+  ```
+
+  * 用字典生成
+  
+  ```python
+  import pandas as pd
+  data = [{'a': 1, 'b': 2},{'a': 5, 'b': 10, 'c': 20}]
+  df = pd.DataFrame(data)
+  ```
