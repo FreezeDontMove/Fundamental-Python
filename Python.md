@@ -226,7 +226,7 @@
     * 用某一列当作index:pd.read_csv('含有路径的文件名', index_col = 0)
 * 索引
   * 以nba为例
-  * 
+  
   ```python
   import pandas as pd
   test = pd.read_csv('E:/Python/Intermediate Python/nba.csv')
