@@ -224,14 +224,67 @@
 * 读取.csv文件
   * pd.read_csv('含有路径的文件名')
     * 用某一列当作index:pd.read_csv('含有路径的文件名', index_col = 0)
-* 索引
+* 查询表中信息
   * 以nba.csv为例 [nba.csv](https://static.runoob.com/download/nba.csv)
   
-  ```python
-  import pandas as pd
-  test = pd.read_csv('E:/Python/Intermediate Python/nba.csv')
-  name_1 = test[['Name']] # 以DataFrame的形式返回
-  name_2 = test['Name'] # 以Series的形式返回
-  ```
+  * 查询某列或多列全部信息
+  
+    ```python
+    import pandas as pd
+    test = pd.read_csv('E:/Python/Intermediate Python/nba.csv')
+    name_1 = test[['Name', 'Team']] # 以DataFrame的形式返回
+    name_2 = test['Name'] # 以一维有标签的数组的形式返回
+
+    test.loc[:, '行字段名']
+    test.iloc[:, 索引]
+
+    test.loc[:, ['行字段名1','行字段名2']]
+    test.iloc[:, [索引1, 索引2]]
+    ```
+
+  * 查询某行全部信息
+
+    ```python
+    # loc用于具体的字段名
+    # iloc用于索引, 必须是数字
+
+    test.loc['索引名'] # 第一种方法
+    test.iloc[索引] # 第二种方法
+
+    # 第二种格式,用于查询多个数据
+    test.loc[['索引名1', '索引名2']] 
+    test.iloc[[索引1, 索引2]]
+    ```
+
+  * 查询某行某列信息
+
+    ```python
+    test = pd.read_csv('E:/Python/Intermediate Python/nba.csv', index_col = 0)
+    test.loc['行字段名', '列字段名'] # 一个数据
+    test.iloc[行索引, 列索引] # 一个数据
+    ```
+
+  * 查询某行多列信息
+
+    ```python
+    test.loc[['行字段名'], ['列字段名1', '列字段名2']]
+    test.iloc[[行索引], [列索引1, 列索引2]]
+    ```
+  
+
+  * 查询某列多行信息
+
+    ```python
+    test.loc[['行字段名1', '行字段名2'], '列字段名1']
+    test.iloc[[行索引1, 行索引2], 列索引]
+    ```
+  
+  * 查询多行多列信息
+
+    ```python
+    test.loc[['行字段名1', '行字段名2'], ['列字段名1', '列字段名2']]
+    test.iloc[[行索引1, 行索引2], [列索引1, 列索引2]]
+    ```
+  
 
   * [DataFrame和Series的区别](https://blog.csdn.net/u012474716/article/details/78550391)
